@@ -10,7 +10,7 @@ def menu_Principal():
     opcion = input("Ingrese una opcion: ")
     return opcion
 
-def menu_Generos(new_genero, list_genero, ):
+def menu_Generos(new_genero, list_genero):
     while True:
         print("1.crear Generos")
         print("2.Listar Generos")

@@ -1,13 +1,13 @@
 import os 
 import json
 
-def save_json(data, file_path):
-    with open(file_path, 'w') as f:
+def save_json(data):
+    with open( 'w') as f:
         json.dump(data, f)
 
-def load_json(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as f:
+def load_json():
+    if os.path.exists():
+        with open('r') as f:
             try:
                 return json.load(f)
             except json.JSONDecodeError:
