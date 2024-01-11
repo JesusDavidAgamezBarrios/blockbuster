@@ -8,7 +8,7 @@ def new_actor(file_path_actores):
     actor["apellido"]= input("Ingrese el apellido del actor: ")
     actor["nacionalidad"]= input("Ingrese la nacionalidad del actor: ")
     actores.append(actor)
-    save_json(file_path_actores, actores)
+    save_json(actores, file_path_actores)
 
 def list_actor(file_path_actores):
     actores = load_json(file_path_actores)

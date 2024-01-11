@@ -1,8 +1,8 @@
 from utils.utils import load_json, save_json
 
-def informe_genero(file_path_informes):
+def informe_genero():
     genero = input("Ingrese el género del informe que desea buscar: ")
-    informes = load_json(file_path_informes)
+    informes = load_json()
     for informe in informes:
         if informe["genero"] == genero:
             print("id: ", informe["id"])
@@ -10,9 +10,9 @@ def informe_genero(file_path_informes):
             print("sinopsis: ", informe["sinopsis"])
             print("")
 
-def informe_actor(file_path_informes):
+def informe_actor():
     actor = input("Ingrese el actor del informe que desea buscar: ")
-    informes = load_json(file_path_informes)
+    informes = load_json()
     for informe in informes:
         if informe["actor"] == actor:
             print("id: ", informe["id"])
@@ -20,9 +20,9 @@ def informe_actor(file_path_informes):
             print("sinopsis: ", informe["sinopsis"])
             print("")
 
-def informe_pelicula(file_path_informes):
+def informe_pelicula():
     pelicula = input("Ingrese la película del informe que desea buscar: ")
-    informes = load_json(file_path_informes)
+    informes = load_json()
     for informe in informes:
         if informe["pelicula"] == pelicula:
             print("id: ", informe["id"])
@@ -30,9 +30,10 @@ def informe_pelicula(file_path_informes):
             print("sinopsis: ", informe["sinopsis"])
             print("")
 
-def formato_tipo(file_path_formatos):
+def formato_tipo():
     tipo = input("Ingrese el tipo de formato que desea buscar: ")
-    formatos = load_json(file_path_formatos)
+    formatos = load_json()
+    formatos = save_json()
     for formato in formatos:
         if formato["tipo"] == tipo:
             print("id: ", formato["id"])

@@ -1,8 +1,8 @@
 # Description: Funciones de peliculas
 from utils.utils import load_json, save_json
 
-def new_pelicula(file_path_peliculas):
-    peliculas = load_json(file_path_peliculas)
+def new_pelicula():
+    peliculas = load_json()
     pelicula = {}
     pelicula["id"]= input("Ingrese el id de la pelicula: ")
     pelicula["nombre"]= input("Ingrese el nombre de la pelicula: ")
@@ -11,10 +11,10 @@ def new_pelicula(file_path_peliculas):
     pelicula["actor"]= input("Ingrese el actor de la pelicula: ")
     pelicula["formato"]= input("Ingrese el formato de la pelicula: ")
     peliculas.append(pelicula)
-    save_json(file_path_peliculas, peliculas)
+    save_json(peliculas)
 
-def list_pelicula(file_path_peliculas):
-    peliculas = load_json(file_path_peliculas)
+def list_pelicula():
+    peliculas = load_json()
     for pelicula in peliculas:
         print("id: ", pelicula["id"])
         print("nombre: ", pelicula["nombre"])
