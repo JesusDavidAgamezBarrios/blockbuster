@@ -1,5 +1,5 @@
 
-from businness.utils.utils import load_json, save_json
+from utils.utils import load_json, save_json
 
 def new_genero():
     generos = load_json()

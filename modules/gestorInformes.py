@@ -1,4 +1,4 @@
-from businness.utils.utils import load_json, save_json
+from utils.utils import load_json, save_json
 
 def informe_genero(file_path_informes):
     genero = input("Ingrese el género del informe que desea buscar: ")

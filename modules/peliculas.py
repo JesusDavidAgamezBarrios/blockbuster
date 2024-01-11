@@ -1,5 +1,5 @@
 # Description: Funciones de peliculas
-from businness.utils.utils import load_json, save_json
+from utils.utils import load_json, save_json
 
 def new_pelicula(file_path_peliculas):
     peliculas = load_json(file_path_peliculas)

@@ -1,4 +1,4 @@
-from businness.utils.utils import load_json, save_json
+from utils.utils import load_json, save_json
 
 def new_actor(file_path_actores):
     actores = load_json(file_path_actores)
