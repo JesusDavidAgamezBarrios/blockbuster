@@ -1,27 +1,31 @@
-from utils.utils import load_json, save_json
+from businness.utils.utils import load_json,stop,save_json,clean_screen,print_modified
 
-def new_actor():
-    actores = load_json()
-    actor = {}
-    actor["id"]= input("Ingrese el id del actor: ")
-    actor["nombre"]= input("Ingrese el nombre del actor: ")
-    actor["apellido"]= input("Ingrese el apellido del actor: ")
-    actor["nacionalidad"]= input("Ingrese la nacionalidad del actor: ")
-    actores.append(actor)
-    save_json(actores)
 
-def list_actor(file_path_actores):
-    actores = load_json(file_path_actores)
-    for actor in actores:
-        print("id: ", actor["id"])
-        print("nombre: ", actor["nombre"])
-        print("apellido: ", actor["apellido"])
-        print("nacionalidad: ", actor["nacionalidad"])
-        print("")
+def new_actor(file_path_actors):
+    actors = load_json(file_path_actors)
+    name_actor = input("Ingrese el nombre del actor: ")
+    new_id = "A"
+    list_actors = list(actors.keys())
+    for id in list_actors:#verificar si ya esta el actor
+        if actors[id]["nombre"].lower() == name_actor.lower():
+            print(f"{name_actor} ya esta registrado")
+            stop()
+            return
+    n_actors =len(list_actors)#cantidad de actores
+    n_actors += 1
+    if(n_actors < 10):#cero a la izquierda para los numeros de un digito
+        new_id += "0"
+    new_id += str(n_actors)
+    actors[new_id] = {
+        "id" : new_id,
+        "nombre" : name_actor
+    }
+    save_json(actors,file_path_actors)
 
-for actor in actores:
-    print("id: ", actor["id"])
-    print("nombre: ", actor["nombre"])
-    print("apellido: ", actor["apellido"])
-    print("nacionalidad: ", actor["nacionalidad"])
-    print("")
+def show_actors(file_path_actors):
+    clean_screen()
+    actors = load_json(file_path_actors)
+    print_modified("-","","-","|")
+    for id in actors:
+        print_modified("",id+": "+actors[id]["nombre"]," ","|")
+    stop()
