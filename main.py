@@ -81,7 +81,7 @@ while (True):
                 if(op == 1):
                     show_genre(file_path_movies)
                 elif(op == 2):
-                    show_Silvestre(file_path_movies)
+                    show_Silvestregit push --set-upstream origin master(file_path_movies)
                 elif(op == 3):
                     search_movie(file_path_movies)
                 elif(op == 4):
