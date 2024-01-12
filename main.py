@@ -61,15 +61,15 @@ while (True):
                 if(op == 1):
                     new_movie(file_path_genres,file_path_actors,file_path_formats,file_path_movies)
                 elif(op == 2):
-                     edit_movie(file_path_movies)
+                    edit_movie(file_path_movies)
                 elif(op == 3):
                     remove_movie(file_path_movies)
                 elif(op == 4):
-                     remove_actor(file_path_movies)
+                    remove_actor(file_path_movies)
                 elif(op == 5):
-                     search_movie(file_path_movies)
+                    search_movie(file_path_movies)
                 elif(op == 6):
-                     show_movies(file_path_movies)
+                    show_movies(file_path_movies)
                 elif(op == 7):
                     break
         except Exception as e:
@@ -81,7 +81,7 @@ while (True):
                 if(op == 1):
                     show_genre(file_path_movies)
                 elif(op == 2):
-                    show_Silvestregit push --set-upstream origin master(file_path_movies)
+                    show_Silvestre(file_path_movies)
                 elif(op == 3):
                     search_movie(file_path_movies)
                 elif(op == 4):
