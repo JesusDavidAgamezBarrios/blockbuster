@@ -1,9 +1,9 @@
 import json,os
 
-
+# # #functions about json
 def save_json(database,file_path):
     try:
-      with open(file_path, 'w+') as archivo_json:
+      with open(file_path, 'w') as archivo_json:
         json.dump(database, archivo_json, indent=2)
         
     except FileNotFoundError:
@@ -13,24 +13,22 @@ def save_json(database,file_path):
     except Exception as e:
         print("Unknow error")
         
-
 def load_json(file_path):
-        try:
-            with open(file_path, 'r') as archivo_json:        
-                campers = json.load(archivo_json)  # Use json.load() instead of json.loads()
-                
-                return campers
-        except Exception as e:
-            print(f"Error to load: {e}")
-
+    try:
+      with open(file_path, 'r') as archivo_json:        
+        campers = json.load(archivo_json)
+        # print("You have load the list of campers")
+        return campers
+    except Exception as e:
+      print(f"Error to load: {e}")
 
 def file_path_generator(original_path,directory_name,json_name):
-    data_directory = os.path.join(original_path, directory_name)
+    data_directory = os.path.join(original_path, directory_name)#/home..... /examenesPYTHON/data
     if not os.path.exists(data_directory):# Create the "data" directory if it doesn't exist
         os.makedirs(data_directory)
-    rta = os.path.join(data_directory, json_name)
+    rta = os.path.join(data_directory, json_name)#/home..... /examenesPYTHON/data/json_name
     return rta
-
+# # # general functions
 
 def clean_screen():
     os.system('clear' if os.name == 'posix' else 'cls')    
@@ -101,4 +99,3 @@ def key_menu(dictionary_name):#return the key that the user decide
         print(str(i)+". "+keys[i-1].replace("_"," "))
     op = option_validation("Option: ",1,n)
     return keys[op-1]
-
