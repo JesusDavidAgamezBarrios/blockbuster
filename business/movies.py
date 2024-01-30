@@ -1,8 +1,5 @@
-from businness.utils.utils  import load_json,save_json,stop,print_modified,clean_screen,option_validation
-from businness.utils.utils  import key_menu
-from businness.modules.menus import yes_or_no_menu, key_menu, key_menu_movies
-
-
+from commons.utils import load_json,save_json,stop,print_modified,clean_screen,option_validation
+from commons.menus import key_menu,yes_or_no_menu,key_menu_movies
 
 
 def new_movie(file_path_genres,file_path_actors,file_path_formats,file_path_movies):
@@ -20,9 +17,9 @@ def new_movie(file_path_genres,file_path_actors,file_path_formats,file_path_movi
             print(f"{name_movie} ya esta registrado")
             stop()
             return
-    n_movies =len(list_movies)#cantidad de movies
+    n_movies =len(list_movies)#cantidad de movieos
     n_movies += 1
-    if(n_movies < 10):
+    if(n_movies < 10):#cero a la izquierda para los numeros de un digito
         new_id += "0"
     new_id += str(n_movies)
     duration = input("Ingrese la duracion: ")

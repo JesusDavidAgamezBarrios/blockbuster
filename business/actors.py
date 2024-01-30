@@ -1,5 +1,4 @@
-from businness.utils.utils import load_json,stop,save_json,clean_screen,print_modified
-
+from commons.utils import load_json,save_json,stop,print_modified,clean_screen
 
 def new_actor(file_path_actors):
     actors = load_json(file_path_actors)

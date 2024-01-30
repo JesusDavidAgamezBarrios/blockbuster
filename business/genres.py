@@ -1,7 +1,5 @@
 
-from businness.utils.utils import load_json,save_json,stop,print_modified,clean_screen
-
-
+from commons.utils import load_json,save_json,stop,print_modified,clean_screen
 def new_genre(file_path_genres):
     genres = load_json(file_path_genres)
     name_genre = input("Ingrese el nombre del nuevo genero: ")
